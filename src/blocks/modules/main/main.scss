@@ -1,0 +1,474 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.main {
+  background-color: #ffffff;
+  margin: 60px 0;
+  box-shadow: 0px 24px 80px rgba(0, 0, 0, 0.1);
+  &__container {
+    padding: 0 20px;
+    padding-top: 40px;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__description-name {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+    letter-spacing: 1px;
+    color: #212121;
+  }
+
+  &__description-value {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #212121;
+  }
+  &__img-big {
+    display: none;
+  }
+
+  &__img-sm {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 16px;
+  }
+
+  &__img-sm img {
+    width: 84%;
+    height: 100%;
+  }
+
+  &__right {
+    margin-top: 36px;
+  }
+
+  &__title-sm {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 130%;
+    text-align: center;
+    color: #212121;
+  }
+  &__title-big {
+    display: none;
+  }
+  &__form {
+    margin-top: 28px;
+  }
+  &__form-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__form-name-input {
+    margin-top: 12px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    padding-top: 4px;
+    background: #f8f8f8;
+    border: 1px solid #e4e4e4;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  &__form-tel-input {
+    margin-top: 10px;
+    display: inline-block;
+    width: 63%;
+    height: 50px;
+    padding: 0 10px;
+    padding-top: 4px;
+    background: #f8f8f8;
+    border: 1px solid #e4e4e4;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  &__form-name-input::placeholder,
+  &__form-tel-input::placeholder {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    color: #212121;
+    opacity: 0.2;
+  }
+
+  &__form-name,
+  &__form-tel {
+    display: block;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #212121;
+  }
+
+  &__form-name span,
+  &__form-tel span {
+    color: #428a60;
+  }
+
+  &__form-tel {
+    margin-top: 21px;
+  }
+
+  &__form-btn {
+    margin: 0 auto;
+    margin-top: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    width: 280px;
+    height: 42px;
+    background: #428a60;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__form-btn-text {
+    margin-right: 5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  &__form-btn-arrow {
+    position: relative;
+    top: 2px;
+    left: 3px;
+  }
+
+  &__trust {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    height: 40px;
+  }
+
+  &__trust-inner {
+    width: 198px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__trust p {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 130%;
+    color: #212121;
+  }
+
+  &__form-select-title--ru::after {
+    content: url("../../../img/russia.png");
+    position: absolute;
+    left: 43px;
+    bottom: 11px;
+  }
+  &__form-select-title--en::after {
+    content: url("../../../img/usa.png");
+    position: absolute;
+    left: 43px;
+    bottom: 11px;
+  }
+
+  &__form-select {
+    position: relative;
+    width: 230px;
+    height: 40px;
+    margin: 0 auto;
+
+    position: relative;
+    margin-top: 10px;
+    padding: 0 10px;
+    width: 34%;
+    height: 50px;
+    display: inline-block;
+    background: #f8f8f8;
+    border: 1px solid #e4e4e4;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    &[data-state="active"] {
+      .main__form-select-content {
+        opacity: 1;
+      }
+
+      .main__form-select-label
+        + .main__form-select-input
+        + .main__form-select-label {
+        max-height: 40px;
+        border-top-width: 1px;
+      }
+    }
+  }
+
+  &__form-select-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    &::before {
+      content: url(../../../img/select__arrow.png);
+
+      position: absolute;
+      right: 3px;
+      top: 12px;
+      display: block;
+      transition: all 0.3s ease-out;
+    }
+
+    &:hover {
+      border-color: #333333;
+    }
+  }
+
+  &__form-select-content {
+    position: absolute;
+    top: 40px;
+    left: 3px;
+
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 6px);
+
+    background-color: #ffffff;
+
+    border: 1px solid #c7ccd1;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    transition: all 0.3s ease-out;
+
+    opacity: 0;
+    z-index: 8;
+  }
+
+  &__form-select-input {
+    display: none;
+
+    &:checked + label {
+      background-color: #dedede;
+    }
+    &:disabled + label {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  }
+
+  &__form-select-label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    max-height: 0;
+    padding: 0 16px;
+
+    transition: all 0.2s ease-out;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    & + input + & {
+      border-top: 0 solid #c7ccd160;
+    }
+
+    &:hover {
+      background-color: #d8093a !important;
+
+      color: #ffffff;
+    }
+  }
+}
+
+@media (min-width: 530px) {
+  .main {
+    &__container {
+      max-width: 530px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 830px) {
+  .main {
+    margin: 0 auto;
+    margin-top: 75px;
+    &__container {
+      max-width: 1120px;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    &__left {
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      width: 50%;
+      height: 500px;
+      background: linear-gradient(180deg, #428a60 0%, #35734f 100%);
+      box-shadow: 0px 24px 80px rgba(0, 0, 0, 0.1);
+      border-radius: 1px;
+    }
+
+    &__description {
+      position: absolute;
+      flex-direction: column;
+      height: 425px;
+      left: 40px;
+      top: 40px;
+    }
+
+    &__description-name,
+    &__description-value {
+      color: #ffffff;
+    }
+
+    &__img-sm {
+      display: none;
+    }
+
+    &__img-big {
+      display: block;
+      position: absolute;
+      bottom: 30px;
+      left: 56px;
+      z-index: 2;
+    }
+
+    &__img-big::after {
+      content: url("../../../img/bg__reduslim.png");
+      position: absolute;
+      bottom: -128px;
+      left: -34px;
+      z-index: -1;
+    }
+
+    &__img-big img {
+      width: 100%;
+    }
+
+    &__right {
+      background-color: #ffffff;
+      width: 50%;
+      margin: 0;
+      z-index: 2;
+    }
+    &__bg-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 136px;
+      background: #f8f8f8;
+      border-radius: 0 30px 0 0;
+    }
+
+    &__title-sm {
+      display: none;
+      width: 303px;
+    }
+
+    &__title-big {
+      display: block;
+      width: 320px;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 130%;
+      text-align: center;
+      color: #212121;
+    }
+
+    &__form {
+      max-width: 320px;
+      margin: 0 auto;
+      margin-top: 52px;
+    }
+
+    &__form-tel {
+      margin-top: 20px;
+    }
+
+    &__form-btn {
+      margin-top: 37px;
+      width: 320px;
+    }
+
+    &__form-btn-arrow {
+      left: 0;
+    }
+
+    &__form-name-input {
+      padding: 0 17px;
+      padding-top: 0;
+    }
+
+    &__form-tel-input {
+      width: 57%;
+      padding: 0 17px;
+    }
+    &__form-select {
+      margin-left: 20px;
+      width: 36%;
+      padding: 0 16px;
+    }
+
+    &__form-select-title {
+      &::before {
+        right: 17px;
+        top: 10px;
+      }
+    }
+    &__form-select-title--ru::after {
+      left: 49px;
+    }
+    &__form-select-title--en::after {
+      left: 49px;
+    }
+
+    &__trust {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .main {
+    max-width: 1120px;
+  }
+}
